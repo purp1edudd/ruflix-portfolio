@@ -166,6 +166,13 @@
             color: var(--accent-orange);
         }
         
+        .discord-username {
+            font-family: 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            color: #ccc;
+            margin-top: 10px;
+        }
+        
         .copyright {
             font-size: 0.8rem;
             color: #666;
@@ -218,9 +225,9 @@
             <div class="social-links">
                 <a href="https://www.roblox.com/users/8284128174/profile" class="social-link"><i class="fab fa-roblox"></i></a>
                 <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                 <a href="https://www.youtube.com/@ruflixTSB" class="social-link"><i class="fab fa-youtube"></i></a>
             </div>
+            <p class="discord-username">Discord: vanmix.roblox38</p>
             <p class="copyright">© 2025 RUFLIX | ALL RIGHTS RESERVED</p>
         </footer>
     </div>
@@ -244,6 +251,19 @@
                 btn.style.transform = '';
                 btn.style.boxShadow = '';
             });
+        });
+
+        // Discord tooltip
+        const discordLink = document.querySelector('.fa-discord').parentElement;
+        discordLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            const tempInput = document.createElement('input');
+            tempInput.value = 'vanmix.roblox38';
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            alert('Discord username copied to clipboard: vanmix.roblox38');
         });
     </script>
 </body>
